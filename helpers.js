@@ -154,7 +154,16 @@ exports.fetchOembed = async (linkUrl, endpointUrl) => {
 };
 
 exports.selectPossibleOembedLinkNodes = markdownAST => {
-  return select(markdownAST, "paragraph link:only-child");
+  //return select(markdownAST, "paragraph link:only-child");
+  return select(markdownAST, "root > paragraph, blockquote > paragraph").flatMap(paragraph => {
+    if (paragraph.children.length != 1) {
+      return [];
+    }
+    if (paragraph.children[0].type != 'link') {
+      return [];
+    }
+    return paragraph.children;
+  });
 };
 
 exports.tranformsLinkNodeToOembedNode = (node, oembedResult) => {
