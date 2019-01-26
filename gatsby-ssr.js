@@ -4,7 +4,7 @@ const { ammendOptions, filterProviderKeys } = require("./helpers");
 const SCRIPTS = {
   Twitter: "https://platform.twitter.com/widgets.js",
   Instagram: "https://www.instagram.com/embed.js",
-  Flickr: "https://embedr.flickr.com/assets/client-code.js",
+  //Flickr: "https://embedr.flickr.com/assets/client-code.js",
   Reddit: "https://embed.redditmedia.com/widgets/platform.js"
 };
 
